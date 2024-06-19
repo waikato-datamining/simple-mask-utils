@@ -26,3 +26,5 @@ polys = mask_to_polygon(mask)  # determine polygons
 for poly in polys:
     px, py = polygon_to_lists(poly, swap_x_y=True, as_type="int")  # get coordinates
 ```
+
+See also [this example](example).
