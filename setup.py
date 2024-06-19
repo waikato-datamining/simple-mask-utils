@@ -14,7 +14,7 @@ def _read(f):
 
 setup(
     name="simple-mask-utils",
-    description="Utility functions for dealing with image segmentation masks and turning them into polygons",
+    description="Utility functions for dealing with image segmentation masks and turning them into polygons.",
     long_description=(
         _read('DESCRIPTION.rst') + b'\n' +
         _read('CHANGES.rst')).decode('utf-8'),

@@ -62,7 +62,7 @@ def mask_to_polygon(mask, mask_threshold=0.1, mask_nth=1, view=None, view_margin
     return polys
 
 
-def polygon_to_lists(poly, swap_x_y=False, normalize=False, img_width=1, img_height=1, as_string=False):
+def polygon_to_lists(poly, swap_x_y=False, normalize=False, img_width=1, img_height=1, as_type="float"):
     """
     Turns a polygon into two lists, one with xs and one with ys. Coordinates can be normalized.
 
@@ -76,14 +76,17 @@ def polygon_to_lists(poly, swap_x_y=False, normalize=False, img_width=1, img_hei
     :type img_width: int
     :param img_height: the image height to use for normalizing the coordinates
     :type img_height: int
-    :param as_string: whether to return the values as string or float
-    :type as_string: bool
+    :param as_type: the type to return (float|str|int)
+    :type as_type: str
     :return: tuple of one list containing all xs and one containing all ys
     :rtype: tuple
     """
 
     px = []
     py = []
+
+    as_int = (as_type == "int")
+    as_str = (as_type == "str")
 
     for p in poly:
         if swap_x_y:
@@ -95,9 +98,12 @@ def polygon_to_lists(poly, swap_x_y=False, normalize=False, img_width=1, img_hei
         if normalize:
             x = x / img_width
             y = y / img_height
-        if as_string:
+        if as_str:
             x = str(x)
             y = str(y)
+        elif as_int:
+            x = int(x)
+            y = int(y)
         px.append(x)
         py.append(y)
 

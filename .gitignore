@@ -161,3 +161,4 @@ cython_debug/
 *.iml
 blah*.py
 test/
+blobs_poly.png
