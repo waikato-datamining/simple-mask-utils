@@ -7,7 +7,7 @@ Utility functions around image segmentation masks and turning them into polygons
 You can install the library via `pip` (or `pip3`):
 
 ```bash
-pip install simple-mask-utils
+pip install simple_mask_utils
 ```
 
 Or directly from the repo:
